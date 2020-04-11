@@ -140,9 +140,14 @@ h3 {
 }
 
 /*Searchbar settings*/
-.form-control{
-  object-position: center;
-  width: 400px;
+.box{
+  width: 100%;
+  text-align: center;
+}
+
+#search {
+  margin: 0 auto;
+  display: block;
 }
 
 .bar-plot{
