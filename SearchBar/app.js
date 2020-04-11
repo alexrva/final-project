@@ -1,0 +1,23 @@
+
+$(document).ready(function () {
+    $('#employee_table tr').hide();
+    $('#search').keyup(function () {
+        search_table($(this).val());
+    });
+    function search_table(value) {
+        $('#employee_table tr').each(function () {
+            var found = 'false';
+            $(this).each(function () {
+                if (($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) || ($(this).attr('id') === 'tr-header')) {
+                    found = 'true';
+                }
+            });
+            if (found == 'true'&& value) {
+                $(this).show();
+            }
+            else {
+                $(this).hide();
+            }
+        });
+    }
+});
