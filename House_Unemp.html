@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/icon.png">
+    <title>City Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidenav">
+                    <h2 style="text-align: center; font-family: Arial Black, Gadget, sans-serif;">City Search</h2>
+                    <a href="index.html">New Search</a>
+                    <hr width="90%" size="4" noshade="noshade" color="black">
+                    <h3>Per city</h3>
+                    <a href="Salary_Pop.html">Salary & Population</a>
+                    <a href="Posi_unemp.html">Positions & Unemployment</a>
+                    <a href="Living.html">Cost of Living</a>
+                    <a href="Com_clim.html">Commute & Climate</a>
+                    <a href="House_Unemp.html">Housing Cost Over Time</a>
+                    <hr width="90%" size="4" noshade="noshade" color="black">
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Housing Costs Over Time</h1>
+
+                </div>
+                <div id="bar-plot"></div>
+                <script src="graphsplot.js"></script>
+
+
+                <!-- <div id="bar-plot2"></div>
+                <script src="graphsplot2.js"></script> -->
+
+                <div class="table-responsive" id="tableDiv"></div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster-->
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+
+</html>
