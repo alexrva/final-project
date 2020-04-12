@@ -61,6 +61,24 @@ def get_me_filtered_cities():
         results.append(city)
     return jsonify(results)
 
+@app.route("/api/tabledata")
+def get_me_tabledata():
+    global engine
+    results = []
+    session = Session(engine)
+    rows = engine.execute(f"\
+        select cityrank,search.city,search.state,averagesalary,medianhousingcost,medianrent,unemploymentrate,href,abbr from search, href, stateabbr \
+        where lower(search.state) = lower(href.state) \
+        and lower(search.city) = lower(href.city) \
+        and lower(stateabbr.state) = lower(href.state) \
+        order by cityrank")
+
+    for row in rows:
+        tablerow = dict(row)
+        results.append(tablerow)
+
+    return jsonify(results)
+
 ### the 'home' route. 
 ### NOTE: This allows sending data to the HTML through templating
 ## But you'll likely not need it since most of what you're doing is AJAX APIs

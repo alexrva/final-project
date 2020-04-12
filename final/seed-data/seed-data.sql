@@ -37,3 +37,52 @@ COPY citydata(ranking,city,statecode,avg_sal,med_h,med_r,avg_h_temp,avg_l_temp,m
 FROM '/Users/greg/students/final-project/final/seed-data/CityDataFinal.csv' DELIMITER ',' CSV HEADER;
 
 select * from citydata;
+
+DROP TABLE IF EXISTS stateabbr;
+CREATE TABLE  stateabbr (
+    id  SERIAL PRIMARY KEY,
+    state VARCHAR(64),
+    abbr VARCHAR(64)
+);
+
+COPY stateabbr(state,abbr) 
+FROM '/Users/greg/students/final-project/final/seed-data/state-abbr.csv' DELIMITER ',' CSV HEADER;
+
+select * from stateabbr;
+
+DROP TABLE IF EXISTS href;
+CREATE TABLE  href (
+    id  SERIAL PRIMARY KEY,
+    state VARCHAR(64),
+    city VARCHAR(64),
+    href VARCHAR(1024)
+);
+
+COPY href(state,city,href) 
+FROM '/Users/greg/students/final-project/final/seed-data/href.csv' DELIMITER ',' CSV HEADER;
+
+select * from href;
+
+DROP TABLE IF EXISTS search;
+CREATE TABLE search (
+    id  SERIAL PRIMARY KEY,
+    cityrank INT,
+    city VARCHAR(64),
+    state VARCHAR(64),
+    averagesalary VARCHAR(64),
+    medianhousingcost VARCHAR(64),
+    medianrent VARCHAR(64),
+    unemploymentrate VARCHAR(64)
+);
+
+COPY search(cityrank,city,state,averagesalary,medianhousingcost,medianrent,unemploymentrate) 
+FROM '/Users/greg/students/final-project/final/seed-data/search.csv' DELIMITER ',' CSV HEADER;
+
+
+select * from search;
+
+select cityrank,search.city,search.state,averagesalary,medianhousingcost,medianrent,unemploymentrate,href,abbr from search, href, stateabbr
+where lower(search.state) = lower(href.state)
+and lower(search.city) = lower(href.city)
+and lower(stateabbr.state) = lower(href.state)
+order by cityrank;
