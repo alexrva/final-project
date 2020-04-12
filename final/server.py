@@ -12,7 +12,7 @@ app = Flask(__name__)
 HOSTNAME="127.0.0.1"
 PORT="5432"
 USER="postgres"
-PASSWORD="password"
+PASSWORD="postgres"
 DATABASE="project2"
 SCHEMA = "public"
 

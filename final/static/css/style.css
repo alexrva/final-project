@@ -25,6 +25,15 @@ color: black;
   background-position: center;
 }
 
+#row h1{
+  text-align: center;
+  color:rgb(131, 164, 202);
+  font-size: 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: auto;
+  padding-bottom: 10px;
+}
+
 #content h1{
   text-align: center;
   color:white;
