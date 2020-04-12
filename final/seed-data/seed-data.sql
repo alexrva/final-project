@@ -33,7 +33,7 @@ CREATE TABLE  citydata (
     rank INT
 );
 
-COPY citydata(ranking,city,statecode,avg_sal,med_h,med_r,avg_h_temp,avg_l_temp,med_age,unemp,avg_price,salary,positions,Lat,Long,mtg30,mtg_by_sal,mbs,rent12,rent_by_sal,rbs,rent_mtg_avg,rma_weight,our_rank,combined_score,weighted_score,rank) 
+COPY citydata(id,ranking,city,statecode,avg_sal,med_h,med_r,avg_h_temp,avg_l_temp,med_age,unemp,avg_price,salary,positions,Lat,Long,mtg30,mtg_by_sal,mbs,rent12,rent_by_sal,rbs,rent_mtg_avg,rma_weight,our_rank,combined_score,weighted_score,rank) 
 FROM '/Users/greg/students/final-project/final/seed-data/CityDataFinal.csv' DELIMITER ',' CSV HEADER;
 
 select * from citydata;
@@ -45,7 +45,7 @@ CREATE TABLE  stateabbr (
     abbr VARCHAR(64)
 );
 
-COPY stateabbr(state,abbr) 
+COPY stateabbr(id,state,abbr) 
 FROM '/Users/greg/students/final-project/final/seed-data/state-abbr.csv' DELIMITER ',' CSV HEADER;
 
 select * from stateabbr;
@@ -58,7 +58,7 @@ CREATE TABLE  href (
     href VARCHAR(1024)
 );
 
-COPY href(state,city,href) 
+COPY href(id,state,city,href) 
 FROM '/Users/greg/students/final-project/final/seed-data/href.csv' DELIMITER ',' CSV HEADER;
 
 select * from href;
@@ -75,7 +75,7 @@ CREATE TABLE search (
     unemploymentrate VARCHAR(64)
 );
 
-COPY search(cityrank,city,state,averagesalary,medianhousingcost,medianrent,unemploymentrate) 
+COPY search(id,cityrank,city,state,averagesalary,medianhousingcost,medianrent,unemploymentrate) 
 FROM '/Users/greg/students/final-project/final/seed-data/search.csv' DELIMITER ',' CSV HEADER;
 
 
