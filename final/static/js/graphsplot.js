@@ -12,7 +12,7 @@ function queryStringParser() {
 let parms = queryStringParser();
 // alert (parms.city)
 let city = decodeURIComponent(parms.city);
-console.log(city);
+// console.log(city);
 
 // Define SVG area dimensions
 let svgWidth = 850;
@@ -54,9 +54,9 @@ let icity = 0;
 d3.csv("cleanedHousing.csv").then(function(priceData) {
 
  //show the housing price for each City/State combo 
-  console.log(priceData)
+  // console.log(priceData)
   for (let i = 0; i < priceData.length; i++) {
-    console.log(priceData[i].RegionName);
+    // console.log(priceData[i].RegionName);
     if (city === priceData[i].RegionName) {
       icity = i;
       break;
@@ -64,16 +64,16 @@ d3.csv("cleanedHousing.csv").then(function(priceData) {
   }
   
   //create year (x) and price (y) values
-  console.log(priceData[icity]);
+  // console.log(priceData[icity]);
   let x = Object.keys(priceData[icity]);
   let y = Object.values(priceData[icity]);
-  console.log(x);
+  // console.log(x);
   let prices = [];
   for (let i = 0; i < x.length; i++) {
     if (x[i]==="RegionName" || x[i]==="")continue;
     prices.push({ year: x[i], prices: +y[i] });
   }
-  console.log(prices)
+  // console.log(prices)
   // return;
 
 
@@ -141,7 +141,7 @@ d3.csv("cleanedHousing.csv").then(function(priceData) {
 
 
 // }).catch(function (error) {
-//   console.log(error);
+//   // console.log(error);
 // });
 
 
