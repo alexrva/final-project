@@ -1,13 +1,3 @@
-//from search URL paramter, determine what city is being called
-
-let cityrank = "";
-let state = "";
-let averagesalary = "";
-let mediahousingcost = "";
-let medianrent = "";
-let unemploymentrate = "";
-
-//d3.csv("search.csv").then(data => { 
 d3.csv("CityDataFinal.csv").then(data => { 
     console.log(data);
 
@@ -16,7 +6,7 @@ d3.csv("CityDataFinal.csv").then(data => {
     console.log(city);
     let citystatecodeDB = cities.city + ", " + cities.statecode;
     console.log(citystatecodeDB);
-    if (city === citystatecodeDB) {
+    if (city === citystatecodeDB) {  // move data to HTML elements
         document.getElementById("showcity").innerHTML = citystatecodeDB;
         document.getElementById("showaveragesalary").innerHTML = cities.avg_sal;
         document.getElementById("showmediahousingcost").innerHTML = cities.med_h;
@@ -29,12 +19,12 @@ d3.csv("CityDataFinal.csv").then(data => {
         document.getElementById("showsalary").innerHTML = cities.salary;
         document.getElementById("showpositions").innerHTML = cities.positions;
         document.getElementById("showmonthlymortgage").innerHTML = cities.mtg30;
-        document.getElementById("showmortgagebysalary").innerHTML = cities.mtg_by_sal;
-      //  document.getElementById("showmortgagebysalaryN").innerHTML = cities.mbs;
         document.getElementById("showannualrent").innerHTML = cities.rent12;
-        document.getElementById("showrentbysalary").innerHTML = cities.rent_by_sal;
-        //document.getElementById("showrbs").innerHTML = cities.rbs;
-       // document.getElementById("showourrank").innerHTML = cities.rank;
+        // document.getElementById("showmortgagebysalary").innerHTML = cities.mtg_by_sal;
+        // document.getElementById("showmortgagebysalaryN").innerHTML = cities.mbs;
+        // document.getElementById("showrentbysalary").innerHTML = cities.rent_by_sal;
+        // document.getElementById("showrbs").innerHTML = cities.rbs;
+        // document.getElementById("showourrank").innerHTML = cities.rank;
       } 
   })
 }) 

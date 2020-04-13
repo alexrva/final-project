@@ -15,8 +15,11 @@ let city = decodeURIComponent(parms.city);
 // console.log(city);
 
 // Define SVG area dimensions
-let svgWidth = 850;
-let svgHeight = 600;
+//let svgWidth = 850;
+//let svgHeight = 600;
+let svgWidth = 650;
+let svgHeight = 300;
+
 
 // Define the chart's margins as an object
 let chartMargin = {
@@ -104,10 +107,8 @@ d3.csv("cleanedHousing.csv").then(function(priceData) {
   svg.append("text")
     .attr("x", 420)
     .attr("y", 30)
-    .style("text-anchor", "middle")
+    .style("text-anchor", "end")
     .text("Average Housing Price Over Time");
-
-
 
   // Create code to build the bar chart using the state data.
   chartGroup.selectAll(".bar")

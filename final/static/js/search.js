@@ -30,7 +30,7 @@ function makeTable() {
     <th title="Field #2">City</th>
     <th title="Field #3">State</th>
     <th title="Field #4">Average Salary</th>
-    <th title="Field #5">Median Houseing Cost</th>
+    <th title="Field #5">Median House Price</th>
     <th title="Field #6">Median Rent</th>
     <th title="Field #7">Unemployment Rate</th>
     <th title="Field #8">Learn More</th>
