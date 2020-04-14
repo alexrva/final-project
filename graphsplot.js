@@ -11,7 +11,7 @@ function queryStringParser() {
 
 let parms = queryStringParser();
 // alert (parms.city)
-let city = decodeURIComponent(parms.city);
+let city = decodeURIComponent(parms.city);wq
 console.log(city);
 
 // Define SVG area dimensions
@@ -50,6 +50,7 @@ let chartGroup = svg.append("g")
   .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Load data from CSV
+//define variable 
 let icity = 0;
 d3.csv("cleanedHousing.csv").then(function(priceData) {
 
