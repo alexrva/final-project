@@ -12,7 +12,7 @@ app = Flask(__name__)
 HOSTNAME="127.0.0.1"
 PORT="5432"
 USER="postgres"
-PASSWORD="password"
+PASSWORD="Razor2b!"
 DATABASE="project2"
 SCHEMA = "public"
 
@@ -59,6 +59,24 @@ def get_me_filtered_cities():
     for row in rows:
         city = dict(row)
         results.append(city)
+    return jsonify(results)
+
+@app.route("/api/tabledata")
+def get_me_tabledata():
+    global engine
+    results = []
+    session = Session(engine)
+    rows = engine.execute(f"\
+        select cityrank,search.city,search.state,averagesalary,medianhousingcost,medianrent,unemploymentrate,href,abbr from search, href, stateabbr \
+        where lower(search.state) = lower(href.state) \
+        and lower(search.city) = lower(href.city) \
+        and lower(stateabbr.state) = lower(href.state) \
+        order by cityrank")
+
+    for row in rows:
+        tablerow = dict(row)
+        results.append(tablerow)
+
     return jsonify(results)
 
 ### the 'home' route. 
