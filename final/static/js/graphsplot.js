@@ -1,4 +1,4 @@
-//from search URL paramter, determine what city is being called
+//from search query paramter, determine what city is being called
 function queryStringParser() {
   let results = {};
   let words = window.location.search.substring(1).split('&');
@@ -9,31 +9,27 @@ function queryStringParser() {
   return results;
 }
 
+// Get the city passed from the query parameter
 let parms = queryStringParser();
-// alert (parms.city)
 let city = decodeURIComponent(parms.city);
-// console.log(city);
 
 // Define SVG area dimensions
-//let svgWidth = 850;
-//let svgHeight = 600;
 let svgWidth = 650;
 let svgHeight = 300;
 
-
-// Define the chart's margins as an object
+// Define chart's margins as an object
 let chartMargin = {
-  top: 40,
+  top: 60,
   right: 40,
   bottom: 40,
-  left: 40
+  left: 60
 };
 
 // // Bring in toolTip to make it an interactive visual 
-// let toolTip = d3.select("body")
-//   .append("div")
-//   .classed("my-tooltip", true);
-// // .style("opacity", 0);
+let toolTip = d3.select("body")
+  .append("div")
+  .classed("my-tooltip", true)
+  .style("opacity", 0);
 
 // Define dimensions of the chart area
 let chartWidth = svgWidth - chartMargin.left - chartMargin.right;
@@ -76,9 +72,6 @@ d3.csv("cleanedHousing.csv").then(function(priceData) {
     if (x[i]==="RegionName" || x[i]==="")continue;
     prices.push({ year: x[i], prices: +y[i] });
   }
-  // console.log(prices)
-  // return;
-
 
   // Create axes 
   let xScale = d3.scaleBand()
@@ -122,29 +115,9 @@ d3.csv("cleanedHousing.csv").then(function(priceData) {
     .attr("y", d => yScale(d.prices))
     .style("fill", "#69b3a2")
     .style("opacity", 0.5)
-    // .on("mouseover", d => {
-      // toolTip.transition()
-      //   .duration(200)
-      //   .style("opacity" , .9);
-      // toolTip.html("Average Housing Price: " + d.prices)
-      //   .style("left", (d3.event.pageX) + "px")
-      //   .style("top", (d3.event.pageY - 28) + "px");
 
     })
-    // .on("mouseout", d => {
-    //   toolTip.transition()
-    //     .duration(500)
-    //   // .style("opacity", 0);
-
-    // })
     ;
-
-
-
-// }).catch(function (error) {
-//   // console.log(error);
-// });
-
 
 
 
