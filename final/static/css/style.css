@@ -10,10 +10,9 @@ body {
   background-color: rgb(250, 239, 227);  
 }
 
-#map,
-body,
 html {
   height: 100%;
+  width: 100%;
   background-color: rgb(250, 239, 227);
 }
 
@@ -22,10 +21,11 @@ color: black;
 }
 
 #content{
-  background-image: url(/static/images/work3.jpg); 
-  height: 340px; 
-  width: 1821px;
+  background-image: url(/static/images/work4.jpg); 
+  height: 100%; 
+  width: 100%;
   background-position: center;
+  object-fit: cover;
 }
 
 #cantainer{
@@ -40,6 +40,7 @@ color: black;
   width: auto;
   padding-bottom: 10px;
 }
+
 
 #content h1{
   text-align: center;
@@ -172,4 +173,12 @@ h3 {
   float: right;
 }
 
+.container-fluid {
+  padding: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
+#container .search_table{
+  padding-top: 50px;  
+}

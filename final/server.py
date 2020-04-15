@@ -10,9 +10,9 @@ app = Flask(__name__)
 
 ### database Parameters
 HOSTNAME="127.0.0.1"
-PORT="5433"
+PORT="5432"
 USER="postgres"
-PASSWORD="westclox"
+PASSWORD="Razor2b!"
 DATABASE="project2"
 SCHEMA = "public"
 
