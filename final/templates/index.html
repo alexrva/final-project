@@ -17,7 +17,7 @@
 
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding: 0px;">
         <main role="main">
 
             <div id="content">
@@ -47,6 +47,11 @@
                     }
                 </script>
                 <h1>City Search</h1>
+                <div style="width: 300px; position: center;">
+                    <input type="text" name="search" class="form-control" placeholder="City"
+                        id="search" style="margin-left: 750px;"></input>
+                </div>
+                <br>
 
                 <head>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -55,24 +60,18 @@
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
                 </head>
-
+            </div>
                 <body>
-                    <div class="container" style="padding-bottom: 50px;">
-                        <br /><br />
-                        <div style="width: 300px;">
-                            <input type="text" name="search" class="form-control" placeholder="City"
-                                id="search"></input>
-                        </div>
                     </div>
-                        <br /><br />
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="background-color:  rgb(250, 239, 227); padding-left: 300px; padding-right: 300px;">
                             <div class="table-responsive">
+                                <br>
                                 <table class="table table-bordered" id="search_table">
                                 </table>
                             </div>
                         </div>
                 </body>
-            </div>
+            
         </main>
     </div>
     <script src="/static/js/search.js"></script>

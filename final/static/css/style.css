@@ -4,7 +4,7 @@ center {
   margin: 10px auto 10px auto;
 }
 body {
-  padding: 0;
+  padding:0px;
   margin: 0;
   align-content: center;
   background-color: rgb(250, 239, 227);  
@@ -26,9 +26,10 @@ color: black;
   width: 100%;
   background-position: center;
   object-fit: cover;
+  background-color: rgb(250, 239, 227)
 }
 
-#cantainer{
+#container{
   background-color: rgb(250, 239, 227);
 }
 
@@ -175,10 +176,9 @@ h3 {
 
 .container-fluid {
   padding: 0px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: rgb(250, 239, 227);
 }
 
-#container .search_table{
-  padding-top: 50px;  
-}
+
