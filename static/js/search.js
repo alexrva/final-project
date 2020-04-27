@@ -43,7 +43,7 @@ function makeTable() {
             let html = `
         <tr style="display:none">
         <td align="center">${row.cityrank}</td>
-        <td><a href="/House_Unemp.html?city=${row.city}, ${row.abbr}">${row.city}</a></td>
+        <td><a href="../House_Unemp.html?city=${row.city}, ${row.abbr}">${row.city}</a></td>
         <td>${row.state}</td>
         <td>${row.averagesalary}</td>
         <td>${row.medianhousingcost}</td>
