@@ -48,8 +48,8 @@ CREATE TABLE  href (
     href VARCHAR(1024)
 );
 
-DROP TABLE IF EXISTS search;
-CREATE TABLE search (
+DROP TABLE IF EXISTS searchold;
+CREATE TABLE searchold (
     id  SERIAL PRIMARY KEY,
     cityrank INT,
     city VARCHAR(64),
@@ -59,3 +59,22 @@ CREATE TABLE search (
     medianrent VARCHAR(64),
     unemploymentrate VARCHAR(64)
 );
+
+DROP TABLE IF EXISTS search;
+CREATE TABLE search (
+    id  SERIAL PRIMARY KEY,
+    cityrank INT,
+    city VARCHAR(64),
+    state VARCHAR(64),
+    averagesalary VARCHAR(64),
+    medianhousingcost VARCHAR(64),
+    medianrent VARCHAR(64),
+    unemploymentrate VARCHAR(64),
+	state_rate VARCHAR(64),
+	local_tax_low VARCHAR(64),
+	local_tax_high VARCHAR(64),
+	safe_rank_25 VARCHAR(64),
+	fast_growing_25 VARCHAR(64),
+	retirerank VARCHAR(64)
+);
+
