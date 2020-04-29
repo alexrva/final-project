@@ -10,15 +10,17 @@ app = Flask(__name__)
 
 ### database Parameters
 HOSTNAME="127.0.0.1"
-PORT="5433"
+PORT="5432"
 USER="postgres"
-PASSWORD="westclox"
+PASSWORD="postgres"
 DATABASE="project2"
 SCHEMA = "public"
 
 def DatabaseConnection():
     ### Database connection
-    global cities, citydata, engine
+    ###global cities, citydata, engine
+    global cities, engine
+    
     rds_connection_string = f"{USER}:{PASSWORD}@{HOSTNAME}:{PORT}/{DATABASE}"
     print(rds_connection_string)
     engine = create_engine(f'postgresql://{rds_connection_string}')
@@ -31,7 +33,7 @@ def DatabaseConnection():
 
     ### Get the database tables
     #Cities = Base.classes.cities
-    Data = Base.classes.citydata
+    #Data = Base.classes.citydata
     print("Connected")
 
 ### an api to get all the Matches from the database
@@ -67,7 +69,9 @@ def get_me_tabledata():
     results = []
     session = Session(engine)
     rows = engine.execute(f"\
-        select cityrank,search.city,search.state,averagesalary,medianhousingcost,medianrent,unemploymentrate,href,abbr from search, href, stateabbr \
+        select cityrank,search.city,search.state,averagesalary,medianhousingcost,medianrent,unemploymentrate,\
+        state_rate, local_tax_low, local_tax_high, safe_rank_25, fast_growing_25, retirerank, \
+        href,abbr from search, href, stateabbr \
         where lower(search.state) = lower(href.state) \
         and lower(search.city) = lower(href.city) \
         and lower(stateabbr.state) = lower(href.state) \
