@@ -4,15 +4,17 @@ from sqlalchemy.orm import Session
 from sqlalchemy import Column, Integer, String, create_engine, MetaData
 from sqlalchemy.ext.automap import automap_base
 import json
+import os
 
 ### create a flask instance
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.getcwd())
+
 
 ### database Parameters
 HOSTNAME="127.0.0.1"
 PORT="5432"
 USER="postgres"
-PASSWORD="postgres"
+PASSWORD="Razor2b!"
 DATABASE="project2"
 SCHEMA = "public"
 

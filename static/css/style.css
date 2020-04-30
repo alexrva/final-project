@@ -20,8 +20,8 @@ svg {
 color: black;
 }
 
-#content{
-  background-image: url(../images/work4.jpg); 
+#content2{
+  background-image: url(static/images/work4.jpg); 
   height: 100%; 
   width: 100%;
   background-position: center;
@@ -29,6 +29,16 @@ color: black;
   background-color: rgb(250, 239, 227)
 }
 
+#content2 h1{
+  text-align: center;
+  color:white;
+  text-shadow: 2px 2px 8px #000;
+  font-size: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 50px; 
+  width: auto;
+  padding-bottom: 150px;
+}
 #container{
   background-color: rgb(250, 239, 227);
 }
@@ -41,19 +51,6 @@ color: black;
   width: auto;
   padding-bottom: 10px;
 }
-
-
-#content h1{
-  text-align: center;
-  color:white;
-  text-shadow: 2px 2px 8px #000;
-  font-size: 100px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 50px; 
-  width: auto;
-  padding-bottom: 150px;
-}
-
 
 
 /* The sidebar menu */
